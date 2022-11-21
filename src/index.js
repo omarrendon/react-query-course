@@ -14,9 +14,8 @@ import {
 import { RouterProvider } from 'react-router';
 import { router } from './router';
 
-//! Remover enable css source maps
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './assets/styles.css';
+
+import Main from './Main';
 
 // Create a client
 const queryClient = new QueryClient()
@@ -27,9 +26,7 @@ root.render(
   //   {/* <App /> */}
   //   <AppReactQuery />
   // </QueryClientProvider>
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <Main />
 );
 
 // If you want to start measuring performance in your app, pass a function
