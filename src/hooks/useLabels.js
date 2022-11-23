@@ -14,8 +14,10 @@ export default function useLabels() {
     ['labels'],
     getLabels,
     // false is equal to avoid refecth data when the user on focus the window each timess
+    // staleTimne: is to set the time to refetch the petition  
     {
-      refetchOnWindowFocus: false
+      refetchOnWindowFocus: false,
+      staleTime: 1000 * 60 * 60,
     }
   );
   return labelsQuery;
