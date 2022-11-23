@@ -1,6 +1,9 @@
+import useIssueList from '../../hooks/useIssueList';
 import { IssueItem } from './IssueItem';
 
 export const IssueList = () => {
+  const data = useIssueList();
+  
   return (
     <div className="card border-white">
       <div className="card-header bg-dark">

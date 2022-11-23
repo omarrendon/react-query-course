@@ -4,7 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 import { githubApi } from "../api/githubApi";
 
 const getLabels = async () => {
-  const { data } = await githubApi.get('/labels');
+  const { data } = await githubApi.get('/labels',
+  {
+    headers: {
+      Authorization: null
+    }
+  });
   return data;
 };
 
