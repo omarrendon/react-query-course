@@ -15,5 +15,7 @@ const getIssues = async () => {
 export default function useIssueList() {
   const issuesQuery = useQuery(['Issues'], getIssues);
 
-  return issuesQuery;
+  return {
+    issuesQuery
+  };
 }

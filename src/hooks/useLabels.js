@@ -23,7 +23,7 @@ export default function useLabels() {
     // placeHolderData: is to show data meanwhile make the request to the server
     {
       refetchOnWindowFocus: false,
-      // staleTime: 1000 * 60 * 60,
+      staleTime: 1000 * 60 * 60,
       placeholderData: [{
         id: 791921801,
         node_id: "MDU6TGFiZWw3OTE5MjE4MDE=",

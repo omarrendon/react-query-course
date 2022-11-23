@@ -8,7 +8,6 @@ export const LabelPicker = ({ selectedLabels, onChange }) => {
   if (labels.isLoading)
     return (<LoadingIcon />)
 
-  // console.log({ labels });
   return (
     <>
       {labels.data?.map((label) => (
