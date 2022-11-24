@@ -18,7 +18,5 @@ export default function useIssue(issueNumber) {
     () => getIssueInfo(issueNumber )
   );
 
-  return {
-    issueQuery
-  };
+  return issueQuery;
 }
