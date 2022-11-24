@@ -12,11 +12,31 @@ const getIssueInfo = async (issueNumber) => {
   return data;
 };
 
+const getIssueComments = async (issueNumber) => {
+  const { data } = await githubApi.get(`/issues/${issueNumber}/comments`,
+    {
+      headers: {
+        Authorization: null
+      }
+    });
+  return data;
+};
+
 export default function useIssue(issueNumber) {
   const issueQuery = useQuery(
     ['Issue', issueNumber],
-    () => getIssueInfo(issueNumber )
+    () => getIssueInfo(issueNumber),
   );
 
-  return issueQuery;
+  const issueCommentsQuery = useQuery(
+    ['Issue', issueNumber, 'Comments'],
+    () => getIssueComments(issueNumber),
+    {
+      enabled: issueQuery.data !== undefined,
+    }
+  );
+  return {
+    issueQuery,
+    issueCommentsQuery
+  };
 }
